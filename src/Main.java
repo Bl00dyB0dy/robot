@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Robot robot = new Robot(10, 9, Direction.DOWN);
-        moveRobot(robot, 3, 5);
+        Robot robot = new Robot(1, 1, Direction.UP);
+        moveRobot(robot, 3, 0);
     }
     private static void moveRobot(Robot robot, int toX, int toY) {
 
@@ -26,7 +26,7 @@ public class Main {
         }
         if (sourceY <= toY) { //перемещение по оси y
             while (robot.getDirection() != Direction.UP) {
-                robot.turnRight();
+                robot.turnLeft();
             }
             while (sourceY != toY) {
                 robot.stepForward();
@@ -34,7 +34,7 @@ public class Main {
             }
         } else {
             while (robot.getDirection() != Direction.DOWN) {
-                robot.turnLeft();
+                robot.turnRight();
             }
             while (sourceY != toY) {
                 robot.stepForward();
